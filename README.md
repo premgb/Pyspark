@@ -62,3 +62,36 @@ Apply a function to every row in a Spark DataFrame to find top3 values, and the 
 +---+----+----+----+----+----+----+--------+--------+--------+------------+------------+------------+
 
 ```
+<br>
+<h3>3. dynamicCalOnNewCol.py</h3>
+Dynamic calcuation on the new column in a Spark dataframe.
+Add new column to a Spark dataframe and at the same time apply calculation on it based on the value in previous row (i.e. lag)
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
+
+```
+
++---+---+
+|  a|  b|
++---+---+
+|  1|  2|
+|  3|  4|
+|  5|  6|
+|  7|  8|
++---+---+
+
+```
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Output:</b>
+
+```
+
++---+---+---+
+|  a|  b|  c|
++---+---+---+
+|  1|  2|  3|
+|  3|  4|  2|
+|  5|  6|  1|
+|  7|  8|  0|
++---+---+---+
+
+```
