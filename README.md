@@ -95,3 +95,34 @@ Add new column to a Spark dataframe and at the same time apply calculation on it
 +---+---+---+
 
 ```
+<br>
+<h3>4. pass_udf_in_expr_fun.py</h3>
+Pass udf in expr() function.
+Add new column to a Spark dataframe using udf within expr() function
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
+
+```
+
++----+---+
+|name| id|
++----+---+
+|Prem| 10|
+|John| 20|
+|Jack| 30|
++----+---+
+
+```
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Output:</b>
+
+```
+
++----+---+---------------+
+|name| id|name_with_newid|
++----+---+---------------+
+|Prem| 10|          Prem1|
+|John| 20|          John1|
+|Jack| 30|          Jack2|
++----+---+---------------+
+
+```
