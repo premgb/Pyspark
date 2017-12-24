@@ -126,3 +126,34 @@ Add new column to a Spark dataframe using udf within expr() function
 +----+---+---------------+
 
 ```
+<br>
+<h3>5. pass_list_to_udf.py</h3>
+Pass list as an argument to udf.
+Add new column to a Spark dataframe using list as an argument in udf.
+
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
+
+```
+
++-------+-----+
+|student|marks|
++-------+-----+
+|      A|   10|
+|      B|   20|
+|      C|   30|
++-------+-----+
+
+```
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Output:</b>
+
+```
+
++-------+-----+--------------------+
+|student|marks|               grade|
++-------+-----+--------------------+
+|      A|   10|Grading will soon...|
+|      B|   20|                  OK|
+|      C|   30|Grading will soon...|
++-------+-----+--------------------+
+
+```
