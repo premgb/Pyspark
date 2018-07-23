@@ -67,6 +67,10 @@ Apply a function to every row in a Spark DataFrame to find top3 values, and the 
 Dynamic calcuation on the new column in a Spark dataframe.
 Add new column to a Spark dataframe and at the same time apply calculation on it based on the value in previous row (i.e. lag)
 
+<b>Logic:</b><br>
+&nbsp;&nbsp;First row of `c` = 3 <br>
+&nbsp;&nbsp;`c  = (a - b) + lag(c)`
+
 &nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
 
 ```
@@ -100,6 +104,9 @@ Add new column to a Spark dataframe and at the same time apply calculation on it
 Pass udf in expr() function.
 Add new column to a Spark dataframe using udf within expr() function
 
+<b>Logic:</b><br>
+&nbsp;&nbsp;Concatenate name with new sequential id i.e. 1,2,3...
+
 &nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
 
 ```
@@ -121,8 +128,8 @@ Add new column to a Spark dataframe using udf within expr() function
 |name| id|name_with_newid|
 +----+---+---------------+
 |Prem| 10|          Prem1|
-|John| 20|          John1|
-|Jack| 30|          Jack2|
+|John| 20|          John2|
+|Jack| 30|          Jack3|
 +----+---+---------------+
 
 ```
@@ -130,6 +137,10 @@ Add new column to a Spark dataframe using udf within expr() function
 <h3>5. pass_list_to_udf.py</h3>
 Pass list as an argument to udf.
 Add new column to a Spark dataframe using list as an argument in udf.
+
+<b>Logic:</b><br>
+&nbsp;&nbsp;Pass `label_list` to udf <br>
+&nbsp;&nbsp;Dummy udf is to assign grading to marks. If `marks` is `20` then `label_list[1]` else `Grading will soon appear!`.
 
 &nbsp;&nbsp;&nbsp;&nbsp;<b>Input:</b>
 
@@ -142,6 +153,8 @@ Add new column to a Spark dataframe using list as an argument in udf.
 |      B|   20|
 |      C|   30|
 +-------+-----+
+
+label_list = ["Not Ok!", "OK", "Good"]
 
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;<b>Output:</b>
